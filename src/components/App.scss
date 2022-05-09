@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --violet: hsl(257, 40%, 49%);
+    --soft-magenta: hsl(300, 69%, 71%);
+}
+
+html{
+    font-size: 67.5%;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    // font-family: 'Poppins', sans-serif;
+}
+
+.App{
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/bg-desktop.svg'), linear-gradient(var(--violet), var(--violet));
+    padding: 5rem 5rem 3rem 5rem;
+    background-repeat: no-repeat;
+
+    &-logoContainer{
+        margin-bottom: 7.2rem;
+
+        & img{
+            width: 22rem;
+            display: block;
+        }
+    }
+
+    &-content{
+        display: flex;
+        margin-bottom: 2rem;
+        &__imgContainer{
+
+            & img{
+                width: 67.2rem;
+                display: block;
+
+            }
+
+        }
+
+        &__text{
+            padding: 5rem;
+
+            & h2{
+                font-size: 3.5rem;
+                color: #fff;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 600;
+                margin-bottom: 1.6rem;
+            }
+
+            & p{
+                font-size: 1.5rem;
+                color: #fff;
+                margin-bottom: 2.2rem;
+            }
+
+            & button{
+                padding: 1.3rem 0;
+                background-color: #fff;
+                color: var(--violet);
+                width: 18rem;
+                border-radius: 100px;
+                cursor: pointer;
+                font-family: inherit;
+                font-size: 1.7rem;
+                border: none;
+                font-weight: 400;
+                box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.35);
+                transition: all 0.3s;
+
+                &:hover{
+                    background-color: var(--soft-magenta);
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    & footer{
+        display: flex;
+        justify-content: flex-end;
+
+        & .socialsContainer{
+            display: flex;
+            gap: 1.5rem;
+
+            & div{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.8rem;
+                border-radius: 50%;
+                border: 1px solid #fff;
+                cursor: pointer;
+                transition: all 0.4s;
+
+                & svg{
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    fill: #fff;
+                }
+
+                &:hover{
+                    border-color: var(--soft-magenta);
+
+                    & svg{
+                        fill: var(--soft-magenta);
+                    }
+                }
+            }
+        } 
+    }
+}
+
+@media (max-width: 375px){
+    .App{
+        padding: 3rem;
+        background-image: url('../images/bg-mobile.svg'), linear-gradient(var(--violet), var(--violet));
+
+        &-logoContainer{
+            margin-bottom: 5rem;
+    
+            & img{
+                width: 12rem;
+            }
+        }
+
+        &-content{
+            display: block;
+
+            &__imgContainer{
+                width: 100%;
+                margin-bottom: 5rem;
+
+                & img{
+                    width: 100%;
+                    display: block;
+    
+                }
+    
+            }
+
+            &__text{
+                padding: 0;
+                text-align: center;
+                margin-bottom: 6rem;
+    
+                & h2{
+                    font-size: 2.25rem;
+                }
+    
+                & p{
+                    font-size: 1.5rem;
+                    color: #fff;
+                    margin-bottom: 2.2rem;
+                }
+    
+                & button{
+                    padding: 1rem 0;
+                    width: 20rem;
+                    font-size: 1.4rem;
+                }
+            }
+        }
+
+        & footer{
+            justify-content: center;
+
+            & .socialsContainer{
+                gap: 1.1rem;
+
+                & div{
+                    padding: 0.6rem;
+    
+                    & svg{
+                        width: 1.2rem;
+                        height: 1.2rem;
+                    }
+                }
+            }
+        }
+
+    }
+}
